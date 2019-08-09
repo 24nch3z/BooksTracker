@@ -4,6 +4,7 @@ import android.content.Context
 import dagger.Module
 import dagger.Provides
 import ru.s4nchez.bookstracker.data.common.database.AppDatabase
+import ru.s4nchez.bookstracker.utils.SharedPrefHelper
 import ru.terrakok.cicerone.Router
 import javax.inject.Singleton
 
@@ -26,5 +27,11 @@ class AppModule(private val context: Context, private val router: Router) {
     @Singleton
     fun provideDatabase(): AppDatabase {
         return AppDatabase.create(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideSharedPrefHelper(): SharedPrefHelper {
+        return SharedPrefHelper(context)
     }
 }

@@ -1,6 +1,7 @@
 package ru.s4nchez.bookstracker.di.app
 
 import dagger.Component
+import ru.s4nchez.bookstracker.di.authorization.AuthorizationModule
 import ru.s4nchez.bookstracker.di.book.BookModule
 import ru.s4nchez.bookstracker.di.cat.CatModule
 import ru.s4nchez.bookstracker.presentation.view.authorization.AuthorizationFragment

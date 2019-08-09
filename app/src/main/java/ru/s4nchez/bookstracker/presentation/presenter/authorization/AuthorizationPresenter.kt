@@ -1,7 +1,6 @@
 package ru.s4nchez.bookstracker.presentation.presenter.authorization
 
 import ru.s4nchez.bookstracker.domain.authorization.interactor.AuthorizationInteractor
-import ru.s4nchez.bookstracker.domain.authorization.model.AuthorizationResult
 import ru.s4nchez.bookstracker.presentation.presenter.common.BasePresenter
 import ru.s4nchez.bookstracker.presentation.view.authorization.AuthorizationView
 import ru.s4nchez.bookstracker.presentation.view.common.BooksListScreen
@@ -21,12 +20,11 @@ class AuthorizationPresenter(
                 .applySchedulers()
                 .doOnTerminate { view?.hideProgress() }
                 .subscribe({ result ->
-                    when (result) {
-                        AuthorizationResult.SUCCESS -> router.replaceScreen(BooksListScreen())
-                        AuthorizationResult.ERROR -> {
-                            view?.showLoginError()
-                            view?.enableInputs()
-                        }
+                    if (result) {
+                        router.replaceScreen(BooksListScreen())
+                    } else {
+                        view?.showLoginError()
+                        view?.enableInputs()
                     }
                 }, {
                     view?.enableInputs()
