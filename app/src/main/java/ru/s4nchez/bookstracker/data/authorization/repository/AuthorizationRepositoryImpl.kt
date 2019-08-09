@@ -30,9 +30,17 @@ class AuthorizationRepositoryImpl(
 
     override fun login(login: String, password: String): Single<Boolean> {
         return authorizationDataSource.login(login, password)
+                .map(::saveToken)
     }
 
     override fun logout(): Completable {
         return Completable.fromAction { sharedPrefHelper.remove(TOKEN) }
+    }
+
+    private fun saveToken(isSuccess: Boolean): Boolean {
+        if (isSuccess) {
+            sharedPrefHelper.save(TOKEN, Date().time)
+        }
+        return isSuccess
     }
 }
