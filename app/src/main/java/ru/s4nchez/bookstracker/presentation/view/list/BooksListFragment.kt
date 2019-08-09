@@ -1,6 +1,7 @@
 package ru.s4nchez.bookstracker.presentation.view.list
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_list.*
@@ -11,6 +12,7 @@ import ru.s4nchez.bookstracker.presentation.view.common.adaper.AdapterListener
 import ru.s4nchez.bookstracker.presentation.view.common.adaper.DiffAdapter
 import ru.s4nchez.bookstracker.presentation.view.common.adaper.ListItem
 import ru.s4nchez.bookstracker.presentation.view.common.adaper.RecyclerItemClickListener
+import ru.s4nchez.bookstracker.presentation.view.common.decorator.FabItemDecoration
 import ru.s4nchez.bookstracker.presentation.view.list.adapter.BookDelegate
 import ru.s4nchez.bookstracker.utils.Throttle
 import ru.s4nchez.bookstracker.utils.app
@@ -44,6 +46,7 @@ class BooksListFragment : Fragment(), BooksListView, RecyclerItemClickListener, 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recycler_view.adapter = bookAdapter
+        recycler_view.addItemDecoration(FabItemDecoration(context!!))
         create_book_button.setOnClickListener { presenter.openBookCreator() }
         presenter.bindView(this)
         presenter.loadBooks()

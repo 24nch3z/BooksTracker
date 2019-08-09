@@ -14,7 +14,7 @@ class AuthorizationRepositoryImpl(
 
     companion object {
         private const val TOKEN = "authorizationToken"
-        private const val TOKEN_COOLDOWN = 1000 * 60 * 5
+        private const val TOKEN_COOLDOWN = 1000 * 60 * 25
     }
 
     override fun isAuthorized(): Single<Boolean> {
