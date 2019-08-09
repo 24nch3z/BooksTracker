@@ -1,11 +1,10 @@
 package ru.s4nchez.bookstracker.presentation.view.authorization
 
-import ru.s4nchez.bookstracker.presentation.presenter.common.BaseView
+import ru.s4nchez.bookstracker.presentation.view.common.BaseView
+import ru.s4nchez.bookstracker.presentation.view.common.ProgressView
 
-interface AuthorizationView : BaseView {
+interface AuthorizationView : BaseView, ProgressView {
     fun showLoginError()
-    fun showProgress()
-    fun hideProgress()
     fun disableInputs()
     fun enableInputs()
 }

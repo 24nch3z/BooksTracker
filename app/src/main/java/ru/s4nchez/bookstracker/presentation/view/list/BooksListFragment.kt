@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import ru.s4nchez.bookstracker.R
@@ -38,5 +39,9 @@ class BooksListFragment : Fragment(), BooksListView {
     override fun showError(error: Throwable) {
         Snackbar.make(activity!!.findViewById<View>(android.R.id.content),
                 R.string.common_error, Snackbar.LENGTH_SHORT).show()
+    }
+
+    override fun showFact(fact: String) {
+        Toast.makeText(context!!, fact, Toast.LENGTH_LONG).show()
     }
 }
