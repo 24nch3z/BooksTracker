@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.fragment_authorization.*
 import ru.s4nchez.bookstracker.R
 import ru.s4nchez.bookstracker.presentation.presenter.authorization.AuthorizationPresenter
 import ru.s4nchez.bookstracker.utils.app
+import ru.s4nchez.bookstracker.utils.snackbar
 import javax.inject.Inject
 
 class AuthorizationFragment : Fragment(), AuthorizationView {
@@ -80,7 +81,6 @@ class AuthorizationFragment : Fragment(), AuthorizationView {
     }
 
     override fun showError(error: Throwable) {
-        Snackbar.make(activity!!.findViewById<View>(android.R.id.content),
-                R.string.common_error, Snackbar.LENGTH_SHORT).show()
+        snackbar(R.string.common_error)
     }
 }

@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_list.*
 import ru.s4nchez.bookstracker.R
 import ru.s4nchez.bookstracker.presentation.presenter.list.BooksListPresenter
@@ -16,6 +15,7 @@ import ru.s4nchez.bookstracker.presentation.view.common.adaper.ListItem
 import ru.s4nchez.bookstracker.presentation.view.common.adaper.RecyclerItemClickListener
 import ru.s4nchez.bookstracker.presentation.view.list.adapter.BookDelegate
 import ru.s4nchez.bookstracker.utils.app
+import ru.s4nchez.bookstracker.utils.snackbar
 import javax.inject.Inject
 
 class BooksListFragment : Fragment(), BooksListView, RecyclerItemClickListener, AdapterListener {
@@ -73,7 +73,6 @@ class BooksListFragment : Fragment(), BooksListView, RecyclerItemClickListener, 
     }
 
     override fun showError(error: Throwable) {
-        Snackbar.make(activity!!.findViewById<View>(android.R.id.content),
-                R.string.common_error, Snackbar.LENGTH_SHORT).show()
+        snackbar(R.string.common_error)
     }
 }

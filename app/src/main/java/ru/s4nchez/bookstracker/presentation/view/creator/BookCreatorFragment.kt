@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.google.android.material.snackbar.Snackbar
 import ru.s4nchez.bookstracker.R
 import ru.s4nchez.bookstracker.presentation.presenter.creator.BookCreatorPresenter
 import ru.s4nchez.bookstracker.utils.app
+import ru.s4nchez.bookstracker.utils.snackbar
 import javax.inject.Inject
 
 class BookCreatorFragment : Fragment(), BookCreatorView {
@@ -36,7 +36,6 @@ class BookCreatorFragment : Fragment(), BookCreatorView {
     }
 
     override fun showError(error: Throwable) {
-        Snackbar.make(activity!!.findViewById<View>(android.R.id.content),
-                R.string.common_error, Snackbar.LENGTH_SHORT).show()
+        snackbar(R.string.common_error)
     }
 }
