@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Books Tracker</string>
+    <string name="common_error">Произшла ошибка</string>
 </resources>

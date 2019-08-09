@@ -8,7 +8,7 @@ import ru.s4nchez.bookstracker.presentation.view.main.MainActivity
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AppModule::class, PresentersModule::class])
+@Component(modules = [AppModule::class, PresentersModule::class, AuthorizationModule::class])
 interface AppComponent {
     fun inject(view: MainActivity)
     fun inject(view: AuthorizationFragment)

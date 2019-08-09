@@ -1,3 +1,5 @@
 package ru.s4nchez.bookstracker.presentation.view.main
 
-interface MainScreenView
+import ru.s4nchez.bookstracker.presentation.presenter.common.BaseView
+
+interface MainScreenView : BaseView
