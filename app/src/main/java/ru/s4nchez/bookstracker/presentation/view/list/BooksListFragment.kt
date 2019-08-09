@@ -46,7 +46,7 @@ class BooksListFragment : Fragment(), BooksListView, RecyclerItemClickListener, 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recycler_view.adapter = bookAdapter
-        recycler_view.addItemDecoration(FabItemDecoration(context!!))
+//        recycler_view.addItemDecoration(FabItemDecoration(context!!)) // Появился баг с обновлением предпоследнего элемента
         create_book_button.setOnClickListener { presenter.openBookCreator() }
         presenter.bindView(this)
         presenter.loadBooks()
