@@ -7,10 +7,10 @@ import java.util.concurrent.TimeUnit
 class AuthorizationInteractorImpl : AuthorizationInteractor {
 
     override fun isAuthorized(): Single<Boolean> {
-        return Single.fromCallable { Math.random() > 0.5 }
+        return Single.fromCallable { false }
     }
 
-    override fun login(): Single<AuthorizationResult> {
+    override fun login(login: String, password: String): Single<AuthorizationResult> {
         return Single.timer(2, TimeUnit.SECONDS)
                 .flatMap {
                     Single

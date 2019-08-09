@@ -5,6 +5,6 @@ import io.reactivex.Single
 
 interface AuthorizationInteractor {
     fun isAuthorized(): Single<Boolean>
-    fun login(): Single<AuthorizationResult>
+    fun login(login: String, password: String): Single<AuthorizationResult>
     fun logout(): Completable
 }
