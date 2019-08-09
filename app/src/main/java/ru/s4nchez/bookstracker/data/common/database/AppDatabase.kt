@@ -12,7 +12,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun bookDao(): BookDao
 
     companion object {
-        fun CREATE(context: Context): AppDatabase {
+        fun create(context: Context): AppDatabase {
             return Room.databaseBuilder(context, AppDatabase::class.java, "database")
                     .build()
         }

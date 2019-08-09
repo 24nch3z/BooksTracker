@@ -24,8 +24,11 @@ class PresentersModule {
     }
 
     @Provides
-    fun provideBooksListPresenter(bookInteractor: BookInteractor): BooksListPresenter {
-        return BooksListPresenter(bookInteractor)
+    fun provideBooksListPresenter(
+            router: Router,
+            bookInteractor: BookInteractor
+    ): BooksListPresenter {
+        return BooksListPresenter(router, bookInteractor)
     }
 
     @Provides
@@ -37,8 +40,11 @@ class PresentersModule {
     }
 
     @Provides
-    fun provideBookCreatorPresenter(): BookCreatorPresenter {
-        return BookCreatorPresenter()
+    fun provideBookCreatorPresenter(
+            router: Router,
+            bookInteractor: BookInteractor
+    ): BookCreatorPresenter {
+        return BookCreatorPresenter(bookInteractor, router)
     }
 
     @Provides

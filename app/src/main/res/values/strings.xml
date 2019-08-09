@@ -2,6 +2,7 @@
     <string name="app_name">Books Tracker</string>
     <string name="common_error">Произшла ошибка</string>
     <string name="cat">Факт о котах</string>
+    <string name="save">Сохранить</string>
 
     <string name="authorization_screen_title">Авторизация</string>
     <string name="authorization_screen_login_hint">Логин</string>
@@ -15,4 +16,11 @@
     <string name="cat_dialog_exit_button">Выйти</string>
     <string name="cat_dialog_more_button">Еще</string>
     <string name="cat_dialog_error">Фактов нет ;-(</string>
+
+    <string name="book_creator_title_hint">Название</string>
+    <string name="book_creator_title_author">Автор</string>
+    <string name="book_creator_title_description">Описание</string>
+    <string name="book_creator_save_button">@string/save</string>
+    <string name="book_creator_error_empty_title">Заполните заголовок</string>
+    <string name="book_creator_error_empty_author">Заполните автора</string>
 </resources>

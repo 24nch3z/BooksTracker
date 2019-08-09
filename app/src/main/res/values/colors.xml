@@ -7,4 +7,6 @@
     <color name="transparent">#0000</color>
 
     <color name="icon_add_book">#fff</color>
+    <color name="item_book_background_even">#F7EBEF</color>
+    <color name="item_book_background_odd">#FFFFFFFF</color>
 </resources>

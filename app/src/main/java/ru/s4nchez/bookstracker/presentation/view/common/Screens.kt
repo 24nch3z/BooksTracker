@@ -18,8 +18,14 @@ class BooksListScreen : SupportAppScreen() {
     }
 }
 
-class BookCreatorFragment : SupportAppScreen() {
+class BookCreatorCreateFragment : SupportAppScreen() {
     override fun getFragment(): Fragment {
-        return BookCreatorFragment()
+        return BookCreatorFragment.create()
+    }
+}
+
+class BookCreatorChangeFragment(private val bookId: Long) : SupportAppScreen() {
+    override fun getFragment(): Fragment {
+        return BookCreatorFragment.change(bookId)
     }
 }

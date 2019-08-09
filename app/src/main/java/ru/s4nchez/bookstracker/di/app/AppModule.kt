@@ -25,6 +25,6 @@ class AppModule(private val context: Context, private val router: Router) {
     @Provides
     @Singleton
     fun provideDatabase(): AppDatabase {
-        return AppDatabase.CREATE(context)
+        return AppDatabase.create(context)
     }
 }
