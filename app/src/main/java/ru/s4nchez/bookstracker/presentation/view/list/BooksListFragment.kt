@@ -1,14 +1,13 @@
 package ru.s4nchez.bookstracker.presentation.view.list
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_list.*
 import ru.s4nchez.bookstracker.R
 import ru.s4nchez.bookstracker.presentation.presenter.list.BooksListPresenter
+import ru.s4nchez.bookstracker.presentation.view.cat.CatFactDialog
 import ru.s4nchez.bookstracker.presentation.view.common.adaper.AdapterListener
 import ru.s4nchez.bookstracker.presentation.view.common.adaper.DiffAdapter
 import ru.s4nchez.bookstracker.presentation.view.common.adaper.ListItem
@@ -30,6 +29,7 @@ class BooksListFragment : Fragment(), BooksListView, RecyclerItemClickListener, 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         app.componentManager.rootComponent.inject(this)
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -46,6 +46,20 @@ class BooksListFragment : Fragment(), BooksListView, RecyclerItemClickListener, 
     override fun onDestroyView() {
         super.onDestroyView()
         presenter.unbindView()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.book_list_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_item_cat) {
+            val dialog = CatFactDialog()
+            dialog.show(fragmentManager, null)
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun showProgress() {

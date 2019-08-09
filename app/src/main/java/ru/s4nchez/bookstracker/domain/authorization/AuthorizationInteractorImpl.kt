@@ -11,11 +11,11 @@ class AuthorizationInteractorImpl : AuthorizationInteractor {
     }
 
     override fun login(login: String, password: String): Single<AuthorizationResult> {
-        return Single.timer(2, TimeUnit.SECONDS)
+        return Single.timer(1, TimeUnit.SECONDS)
                 .flatMap {
                     Single
                             .fromCallable {
-                                if (Math.random() > 0.5)
+                                if (Math.random() > 0.1)
                                     AuthorizationResult.SUCCESS
                                 else
                                     AuthorizationResult.ERROR

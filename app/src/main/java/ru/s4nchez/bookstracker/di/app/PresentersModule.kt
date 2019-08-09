@@ -4,7 +4,9 @@ import dagger.Module
 import dagger.Provides
 import ru.s4nchez.bookstracker.domain.authorization.AuthorizationInteractor
 import ru.s4nchez.bookstracker.domain.book.BookInteractor
+import ru.s4nchez.bookstracker.domain.cat.CatInteractor
 import ru.s4nchez.bookstracker.presentation.presenter.authorization.AuthorizationPresenter
+import ru.s4nchez.bookstracker.presentation.presenter.cat.CatPresenter
 import ru.s4nchez.bookstracker.presentation.presenter.creator.BookCreatorPresenter
 import ru.s4nchez.bookstracker.presentation.presenter.list.BooksListPresenter
 import ru.s4nchez.bookstracker.presentation.presenter.main.MainScreenPresenter
@@ -37,5 +39,10 @@ class PresentersModule {
     @Provides
     fun provideBookCreatorPresenter(): BookCreatorPresenter {
         return BookCreatorPresenter()
+    }
+
+    @Provides
+    fun provideCatPresenter(catInteractor: CatInteractor): CatPresenter {
+        return CatPresenter(catInteractor)
     }
 }
