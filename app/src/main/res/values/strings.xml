@@ -21,6 +21,10 @@
     <string name="book_creator_title_author">Автор</string>
     <string name="book_creator_title_description">Описание</string>
     <string name="book_creator_save_button">@string/save</string>
-    <string name="book_creator_error_empty_title">Заполните заголовок</string>
+    <string name="book_creator_error_empty_title">Заполните название</string>
     <string name="book_creator_error_empty_author">Заполните автора</string>
+
+    <string name="book_viewer_title_label">Название</string>
+    <string name="book_viewer_author_label">Автор</string>
+    <string name="book_viewer_description_label">Описание</string>
 </resources>

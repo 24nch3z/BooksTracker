@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import ru.s4nchez.bookstracker.presentation.view.authorization.AuthorizationFragment
 import ru.s4nchez.bookstracker.presentation.view.creator.BookCreatorFragment
 import ru.s4nchez.bookstracker.presentation.view.list.BooksListFragment
+import ru.s4nchez.bookstracker.presentation.view.viewer.BookViewerFragment
 import ru.terrakok.cicerone.android.support.SupportAppScreen
 
 class AuthorizationScreen : SupportAppScreen() {
@@ -18,14 +19,20 @@ class BooksListScreen : SupportAppScreen() {
     }
 }
 
-class BookCreatorCreateFragment : SupportAppScreen() {
+class BookCreatorCreateScreen : SupportAppScreen() {
     override fun getFragment(): Fragment {
         return BookCreatorFragment.create()
     }
 }
 
-class BookCreatorChangeFragment(private val bookId: Long) : SupportAppScreen() {
+class BookCreatorChangeScreen(private val bookId: Long) : SupportAppScreen() {
     override fun getFragment(): Fragment {
         return BookCreatorFragment.change(bookId)
+    }
+}
+
+class BookViewerScreen(private val bookId: Long) : SupportAppScreen() {
+    override fun getFragment(): Fragment {
+        return BookViewerFragment.newInstance(bookId)
     }
 }

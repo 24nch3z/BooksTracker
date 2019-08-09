@@ -9,6 +9,7 @@ import ru.s4nchez.bookstracker.presentation.view.cat.CatFactDialog
 import ru.s4nchez.bookstracker.presentation.view.creator.BookCreatorFragment
 import ru.s4nchez.bookstracker.presentation.view.list.BooksListFragment
 import ru.s4nchez.bookstracker.presentation.view.main.MainActivity
+import ru.s4nchez.bookstracker.presentation.view.viewer.BookViewerFragment
 import javax.inject.Singleton
 
 @Singleton
@@ -26,4 +27,5 @@ interface AppComponent {
     fun inject(view: BookCreatorFragment)
     fun inject(view: BooksListFragment)
     fun inject(view: CatFactDialog)
+    fun inject(view: BookViewerFragment)
 }

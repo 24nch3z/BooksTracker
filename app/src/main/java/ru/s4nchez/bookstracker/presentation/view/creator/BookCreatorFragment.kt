@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_creator.*
+import kotlinx.android.synthetic.main.fragment_book_creator.*
 import ru.s4nchez.bookstracker.R
 import ru.s4nchez.bookstracker.data.book.model.Book
 import ru.s4nchez.bookstracker.presentation.presenter.creator.BookCreatorPresenter
@@ -21,7 +21,6 @@ class BookCreatorFragment : Fragment(), BookCreatorView {
     private var bookId: Long? = null
 
     companion object {
-
         private const val ARG_BOOK_ID = "bookId"
 
         fun create(): BookCreatorFragment {
@@ -44,7 +43,7 @@ class BookCreatorFragment : Fragment(), BookCreatorView {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_creator, container, false)
+        return inflater.inflate(R.layout.fragment_book_creator, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -2,7 +2,6 @@ package ru.s4nchez.bookstracker.presentation.view.list
 
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_list.*
 import ru.s4nchez.bookstracker.R
@@ -84,7 +83,7 @@ class BooksListFragment : Fragment(), BooksListView, RecyclerItemClickListener, 
     }
 
     override fun onClick(listItem: ListItem) {
-        Toast.makeText(context!!, "Книга выбрана", Toast.LENGTH_SHORT).show()
+        presenter.openBookViewer((listItem as BookDelegate.Model).book.id!!)
     }
 
     override fun showError(error: Throwable) {

@@ -2,7 +2,8 @@ package ru.s4nchez.bookstracker.presentation.presenter.list
 
 import ru.s4nchez.bookstracker.domain.book.interactor.BookInteractor
 import ru.s4nchez.bookstracker.presentation.presenter.common.BasePresenter
-import ru.s4nchez.bookstracker.presentation.view.common.BookCreatorCreateFragment
+import ru.s4nchez.bookstracker.presentation.view.common.BookCreatorCreateScreen
+import ru.s4nchez.bookstracker.presentation.view.common.BookViewerScreen
 import ru.s4nchez.bookstracker.presentation.view.list.BooksListView
 import ru.s4nchez.bookstracker.presentation.view.list.adapter.BookDelegate
 import ru.s4nchez.bookstracker.utils.applySchedulers
@@ -25,6 +26,10 @@ class BooksListPresenter(
     }
 
     fun openBookCreator() {
-        router.navigateTo(BookCreatorCreateFragment())
+        router.navigateTo(BookCreatorCreateScreen())
+    }
+
+    fun openBookViewer(bookId: Long) {
+        router.navigateTo(BookViewerScreen(bookId))
     }
 }

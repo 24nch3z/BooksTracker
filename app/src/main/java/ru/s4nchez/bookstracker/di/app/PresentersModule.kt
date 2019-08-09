@@ -10,6 +10,7 @@ import ru.s4nchez.bookstracker.presentation.presenter.cat.CatPresenter
 import ru.s4nchez.bookstracker.presentation.presenter.creator.BookCreatorPresenter
 import ru.s4nchez.bookstracker.presentation.presenter.list.BooksListPresenter
 import ru.s4nchez.bookstracker.presentation.presenter.main.MainScreenPresenter
+import ru.s4nchez.bookstracker.presentation.presenter.viewer.BookViewerPresenter
 import ru.terrakok.cicerone.Router
 
 @Module
@@ -45,6 +46,14 @@ class PresentersModule {
             bookInteractor: BookInteractor
     ): BookCreatorPresenter {
         return BookCreatorPresenter(bookInteractor, router)
+    }
+
+    @Provides
+    fun provideBookViewerPresenter(
+            router: Router,
+            bookInteractor: BookInteractor
+    ): BookViewerPresenter {
+        return BookViewerPresenter(bookInteractor, router)
     }
 
     @Provides
