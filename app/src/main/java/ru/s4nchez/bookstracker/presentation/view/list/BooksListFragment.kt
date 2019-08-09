@@ -12,6 +12,7 @@ import ru.s4nchez.bookstracker.presentation.view.common.adaper.DiffAdapter
 import ru.s4nchez.bookstracker.presentation.view.common.adaper.ListItem
 import ru.s4nchez.bookstracker.presentation.view.common.adaper.RecyclerItemClickListener
 import ru.s4nchez.bookstracker.presentation.view.list.adapter.BookDelegate
+import ru.s4nchez.bookstracker.utils.Throttle
 import ru.s4nchez.bookstracker.utils.app
 import ru.s4nchez.bookstracker.utils.snackbar
 import javax.inject.Inject
@@ -23,6 +24,11 @@ class BooksListFragment : Fragment(), BooksListView, RecyclerItemClickListener, 
 
     private val bookAdapter by lazy {
         DiffAdapter(listOf(BookDelegate(this)), this)
+    }
+
+    companion object {
+        private const val DIALOG_THROTTLE_DELAY = 800L
+        private const val DIALOG_THROTTLE_TAG = "CatFactDialog"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,8 +61,10 @@ class BooksListFragment : Fragment(), BooksListView, RecyclerItemClickListener, 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.menu_item_cat) {
-            val dialog = CatFactDialog()
-            dialog.show(fragmentManager, null)
+            Throttle.run(DIALOG_THROTTLE_TAG, {
+                val dialog = CatFactDialog()
+                dialog.show(fragmentManager, null)
+            }, DIALOG_THROTTLE_DELAY)
             return true
         }
         return super.onOptionsItemSelected(item)
