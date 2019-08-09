@@ -1,4 +1,4 @@
-package ru.s4nchez.bookstracker.data.common
+package ru.s4nchez.bookstracker.data.common.datasource
 
 import io.reactivex.Single
 import retrofit2.Call

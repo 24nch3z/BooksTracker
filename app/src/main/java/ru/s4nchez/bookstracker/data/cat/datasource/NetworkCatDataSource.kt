@@ -6,7 +6,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import ru.s4nchez.bookstracker.data.cat.CatApiInterface
 import ru.s4nchez.bookstracker.data.cat.model.CatFact
-import ru.s4nchez.bookstracker.data.common.BaseNetworkDataSource
+import ru.s4nchez.bookstracker.data.common.datasource.BaseNetworkDataSource
 
 class NetworkCatDataSource(retrofit: Retrofit) : BaseNetworkDataSource(), CatDataSource {
 

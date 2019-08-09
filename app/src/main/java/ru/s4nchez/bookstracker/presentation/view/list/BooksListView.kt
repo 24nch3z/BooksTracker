@@ -1,6 +1,7 @@
 package ru.s4nchez.bookstracker.presentation.view.list
 
-import ru.s4nchez.bookstracker.presentation.view.cat.CatView
-import ru.s4nchez.bookstracker.presentation.view.common.BaseView
+import ru.s4nchez.bookstracker.presentation.view.common.view.BaseView
+import ru.s4nchez.bookstracker.presentation.view.common.view.DiffAdapterListView
+import ru.s4nchez.bookstracker.presentation.view.common.view.ProgressView
 
-interface BooksListView : BaseView, CatView
+interface BooksListView : BaseView, ProgressView, DiffAdapterListView

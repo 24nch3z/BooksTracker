@@ -1,6 +1,10 @@
 package ru.s4nchez.bookstracker.utils
 
 import android.app.Activity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import io.reactivex.Completable
 import io.reactivex.Observable
@@ -31,4 +35,8 @@ fun <T> Completable.applySchedulers(): Completable {
     return this
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+}
+
+fun ViewGroup.inflate(@LayoutRes layout: Int): View {
+    return LayoutInflater.from(this.context).inflate(layout, this, false)
 }

@@ -31,6 +31,7 @@ ext {
     cicerone = '5.0.0'
     rxjava = '2.2.10'
     rxandroid = '2.1.1'
+    adapterdelegates = '4.0.0'
 }
 
 dependencies {
@@ -56,10 +57,13 @@ dependencies {
 
     implementation "androidx.room:room-runtime:$room"
     implementation "androidx.room:room-ktx:$room"
+    implementation "androidx.room:room-rxjava2:$room"
     kapt "androidx.room:room-compiler:$room"
 
     implementation "ru.terrakok.cicerone:cicerone:$cicerone"
 
     implementation "io.reactivex.rxjava2:rxjava:$rxjava"
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroid"
+
+    implementation "com.hannesdorfmann:adapterdelegates4:$adapterdelegates"
 }

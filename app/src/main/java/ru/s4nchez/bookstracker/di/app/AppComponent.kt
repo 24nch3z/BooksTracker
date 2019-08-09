@@ -1,6 +1,7 @@
 package ru.s4nchez.bookstracker.di.app
 
 import dagger.Component
+import ru.s4nchez.bookstracker.di.book.BookModule
 import ru.s4nchez.bookstracker.di.cat.CatModule
 import ru.s4nchez.bookstracker.presentation.view.authorization.AuthorizationFragment
 import ru.s4nchez.bookstracker.presentation.view.creator.BookCreatorFragment
@@ -14,7 +15,8 @@ import javax.inject.Singleton
     PresentersModule::class,
     AuthorizationModule::class,
     CatModule::class,
-    NetworkModule::class
+    NetworkModule::class,
+    BookModule::class
 ])
 interface AppComponent {
     fun inject(view: MainActivity)

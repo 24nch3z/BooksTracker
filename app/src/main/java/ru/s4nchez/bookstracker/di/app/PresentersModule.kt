@@ -3,6 +3,7 @@ package ru.s4nchez.bookstracker.di.app
 import dagger.Module
 import dagger.Provides
 import ru.s4nchez.bookstracker.domain.authorization.AuthorizationInteractor
+import ru.s4nchez.bookstracker.domain.book.BookInteractor
 import ru.s4nchez.bookstracker.presentation.presenter.authorization.AuthorizationPresenter
 import ru.s4nchez.bookstracker.presentation.presenter.creator.BookCreatorPresenter
 import ru.s4nchez.bookstracker.presentation.presenter.list.BooksListPresenter
@@ -21,8 +22,8 @@ class PresentersModule {
     }
 
     @Provides
-    fun provideBooksListPresenter(): BooksListPresenter {
-        return BooksListPresenter()
+    fun provideBooksListPresenter(bookInteractor: BookInteractor): BooksListPresenter {
+        return BooksListPresenter(bookInteractor)
     }
 
     @Provides
