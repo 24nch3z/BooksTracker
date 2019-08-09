@@ -1,7 +1,7 @@
 package ru.s4nchez.bookstracker.presentation.presenter.creator
 
 import ru.s4nchez.bookstracker.data.book.model.Book
-import ru.s4nchez.bookstracker.domain.book.BookInteractor
+import ru.s4nchez.bookstracker.domain.book.interactor.BookInteractor
 import ru.s4nchez.bookstracker.presentation.presenter.common.BasePresenter
 import ru.s4nchez.bookstracker.presentation.view.creator.BookCreatorView
 import ru.s4nchez.bookstracker.utils.applySchedulers

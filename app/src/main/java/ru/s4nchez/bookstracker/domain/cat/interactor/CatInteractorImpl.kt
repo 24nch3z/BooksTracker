@@ -1,6 +1,7 @@
-package ru.s4nchez.bookstracker.domain.cat
+package ru.s4nchez.bookstracker.domain.cat.interactor
 
 import io.reactivex.Single
+import ru.s4nchez.bookstracker.domain.cat.CatRepository
 import java.util.*
 
 class CatInteractorImpl(private val catRepository: CatRepository) : CatInteractor {

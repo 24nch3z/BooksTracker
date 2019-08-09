@@ -7,8 +7,8 @@ import ru.s4nchez.bookstracker.data.cat.datasource.CatDataSource
 import ru.s4nchez.bookstracker.data.cat.datasource.MemoryCatDataSource
 import ru.s4nchez.bookstracker.data.cat.datasource.NetworkCatDataSource
 import ru.s4nchez.bookstracker.data.cat.repository.CatRepositoryImpl
-import ru.s4nchez.bookstracker.domain.cat.CatInteractor
-import ru.s4nchez.bookstracker.domain.cat.CatInteractorImpl
+import ru.s4nchez.bookstracker.domain.cat.interactor.CatInteractor
+import ru.s4nchez.bookstracker.domain.cat.interactor.CatInteractorImpl
 import ru.s4nchez.bookstracker.domain.cat.CatRepository
 import javax.inject.Named
 import javax.inject.Singleton

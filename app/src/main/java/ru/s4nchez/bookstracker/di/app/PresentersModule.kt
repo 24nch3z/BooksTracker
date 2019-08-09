@@ -2,9 +2,9 @@ package ru.s4nchez.bookstracker.di.app
 
 import dagger.Module
 import dagger.Provides
-import ru.s4nchez.bookstracker.domain.authorization.AuthorizationInteractor
-import ru.s4nchez.bookstracker.domain.book.BookInteractor
-import ru.s4nchez.bookstracker.domain.cat.CatInteractor
+import ru.s4nchez.bookstracker.domain.authorization.interactor.AuthorizationInteractor
+import ru.s4nchez.bookstracker.domain.book.interactor.BookInteractor
+import ru.s4nchez.bookstracker.domain.cat.interactor.CatInteractor
 import ru.s4nchez.bookstracker.presentation.presenter.authorization.AuthorizationPresenter
 import ru.s4nchez.bookstracker.presentation.presenter.cat.CatPresenter
 import ru.s4nchez.bookstracker.presentation.presenter.creator.BookCreatorPresenter

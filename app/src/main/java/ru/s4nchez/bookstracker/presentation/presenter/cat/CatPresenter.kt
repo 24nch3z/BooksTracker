@@ -1,6 +1,6 @@
 package ru.s4nchez.bookstracker.presentation.presenter.cat
 
-import ru.s4nchez.bookstracker.domain.cat.CatInteractor
+import ru.s4nchez.bookstracker.domain.cat.interactor.CatInteractor
 import ru.s4nchez.bookstracker.presentation.presenter.common.BasePresenter
 import ru.s4nchez.bookstracker.presentation.view.cat.CatView
 import ru.s4nchez.bookstracker.utils.applySchedulers

@@ -1,4 +1,4 @@
-package ru.s4nchez.bookstracker.domain.cat
+package ru.s4nchez.bookstracker.domain.cat.interactor
 
 import io.reactivex.Single
 

@@ -1,7 +1,7 @@
 package ru.s4nchez.bookstracker.presentation.presenter.authorization
 
-import ru.s4nchez.bookstracker.domain.authorization.AuthorizationInteractor
-import ru.s4nchez.bookstracker.domain.authorization.AuthorizationResult
+import ru.s4nchez.bookstracker.domain.authorization.interactor.AuthorizationInteractor
+import ru.s4nchez.bookstracker.domain.authorization.model.AuthorizationResult
 import ru.s4nchez.bookstracker.presentation.presenter.common.BasePresenter
 import ru.s4nchez.bookstracker.presentation.view.authorization.AuthorizationView
 import ru.s4nchez.bookstracker.presentation.view.common.BooksListScreen

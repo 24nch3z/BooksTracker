@@ -1,8 +1,9 @@
-package ru.s4nchez.bookstracker.domain.book
+package ru.s4nchez.bookstracker.domain.book.interactor
 
 import io.reactivex.Observable
 import io.reactivex.Single
 import ru.s4nchez.bookstracker.data.book.model.Book
+import ru.s4nchez.bookstracker.domain.book.BookRepository
 
 class BookInteractorImpl(private val repository: BookRepository) : BookInteractor {
 
