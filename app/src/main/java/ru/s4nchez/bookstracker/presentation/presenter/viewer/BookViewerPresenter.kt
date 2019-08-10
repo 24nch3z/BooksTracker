@@ -2,6 +2,7 @@ package ru.s4nchez.bookstracker.presentation.presenter.viewer
 
 import ru.s4nchez.bookstracker.domain.book.interactor.BookInteractor
 import ru.s4nchez.bookstracker.presentation.presenter.common.BasePresenter
+import ru.s4nchez.bookstracker.presentation.view.common.BookCreatorScreen
 import ru.s4nchez.bookstracker.presentation.view.viewer.BookViewerView
 import ru.s4nchez.bookstracker.utils.applySchedulers
 import ru.terrakok.cicerone.Router
@@ -25,5 +26,9 @@ class BookViewerPresenter(
                     router.exit()
                 }, { view?.showError(it) })
                 .addToCompositeDisposable()
+    }
+
+    fun openBookCreatorScreen(bookId: Long) {
+        router.replaceScreen(BookCreatorScreen(bookId))
     }
 }

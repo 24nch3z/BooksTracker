@@ -72,6 +72,7 @@ class BookViewerFragment : Fragment(), BookViewerView, QuestionDialog.DialogList
                 return true
             }
             R.id.menu_item_change -> {
+                presenter.openBookCreatorScreen(bookId!!)
                 return true
             }
         }
