@@ -1,5 +1,6 @@
 package ru.s4nchez.bookstracker.domain.book.interactor
 
+import io.reactivex.Completable
 import io.reactivex.Observable
 import io.reactivex.Single
 import ru.s4nchez.bookstracker.data.book.model.Book
@@ -20,5 +21,9 @@ class BookInteractorImpl(private val repository: BookRepository) : BookInteracto
             repository.insert(book)
         else
             repository.update(book)
+    }
+
+    override fun delete(bookId: Long): Completable {
+        return repository.delete(bookId)
     }
 }

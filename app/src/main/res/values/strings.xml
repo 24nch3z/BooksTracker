@@ -3,6 +3,8 @@
     <string name="common_error">Произошла ошибка</string>
     <string name="cat">Факт о котах</string>
     <string name="save">Сохранить</string>
+    <string name="yes">Да</string>
+    <string name="cancel">Отмена</string>
 
     <string name="authorization_screen_title">Авторизация</string>
     <string name="authorization_screen_login_hint">Логин</string>
@@ -27,4 +29,7 @@
     <string name="book_viewer_title_label">Название</string>
     <string name="book_viewer_author_label">Автор</string>
     <string name="book_viewer_description_label">Описание</string>
+    <string name="book_viewer_menu_item_change">Изменить</string>
+    <string name="book_viewer_menu_item_delete">Удалить</string>
+    <string name="book_viewer_delete_book_message">Удалить книгу?</string>
 </resources>

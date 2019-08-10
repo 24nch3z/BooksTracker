@@ -33,7 +33,7 @@ fun <T> Observable<T>.applySchedulers(): Observable<T> {
             .observeOn(AndroidSchedulers.mainThread())
 }
 
-fun <T> Completable.applySchedulers(): Completable {
+fun Completable.applySchedulers(): Completable {
     return this
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

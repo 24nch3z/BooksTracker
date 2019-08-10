@@ -1,5 +1,6 @@
 package ru.s4nchez.bookstracker.data.book.repository
 
+import io.reactivex.Completable
 import io.reactivex.Observable
 import io.reactivex.Single
 import ru.s4nchez.bookstracker.data.book.model.Book
@@ -23,5 +24,9 @@ class BookRepositoryImpl(private val database: AppDatabase) : BookRepository {
     override fun update(book: Book): Single<Long> {
         return database.bookDao().update(book)
                 .andThen(Single.fromCallable { book.id!! })
+    }
+
+    override fun delete(bookId: Long): Completable {
+        return database.bookDao().deleteById(bookId)
     }
 }

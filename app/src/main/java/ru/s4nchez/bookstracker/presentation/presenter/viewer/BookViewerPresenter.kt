@@ -17,4 +17,13 @@ class BookViewerPresenter(
                 .subscribe({ view?.render(it) }, { view?.showError(it) })
                 .addToCompositeDisposable()
     }
+
+    fun deleteBook(bookId: Long) {
+        bookInteractor.delete(bookId)
+                .applySchedulers()
+                .subscribe({
+                    router.exit()
+                }, { view?.showError(it) })
+                .addToCompositeDisposable()
+    }
 }

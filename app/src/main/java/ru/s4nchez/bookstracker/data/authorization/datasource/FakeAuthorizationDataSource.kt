@@ -8,6 +8,8 @@ class FakeAuthorizationDataSource : AuthorizationDataSource {
         private val accounts = mapOf(
                 "Messi" to "12345",
                 "JamesBond" to "007",
+                "login" to "password",
+                "admin" to "admin",
                 "Tarantino" to "django"
         )
     }
