@@ -3,7 +3,6 @@ package ru.s4nchez.bookstracker.presentation.presenter.creator
 import ru.s4nchez.bookstracker.data.book.model.Book
 import ru.s4nchez.bookstracker.domain.book.interactor.BookInteractor
 import ru.s4nchez.bookstracker.presentation.presenter.common.BasePresenter
-import ru.s4nchez.bookstracker.presentation.view.common.BookViewerScreen
 import ru.s4nchez.bookstracker.presentation.view.creator.BookCreatorView
 import ru.s4nchez.bookstracker.utils.applySchedulers
 import ru.terrakok.cicerone.Router
@@ -39,13 +38,7 @@ class BookCreatorPresenter(
 
         bookInteractor.save(book)
                 .applySchedulers()
-                .subscribe({
-                    if (bookId == null) {
-                        router.exit()
-                    } else {
-                        router.replaceScreen(BookViewerScreen(bookId))
-                    }
-                }, { view?.showError(it) })
+                .subscribe({ router.exit() }, { view?.showError(it) })
                 .addToCompositeDisposable()
     }
 }

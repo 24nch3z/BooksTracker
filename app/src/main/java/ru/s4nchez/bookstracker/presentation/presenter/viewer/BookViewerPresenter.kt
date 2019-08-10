@@ -22,13 +22,11 @@ class BookViewerPresenter(
     fun deleteBook(bookId: Long) {
         bookInteractor.delete(bookId)
                 .applySchedulers()
-                .subscribe({
-                    router.exit()
-                }, { view?.showError(it) })
+                .subscribe({ router.exit() }, { view?.showError(it) })
                 .addToCompositeDisposable()
     }
 
     fun openBookCreatorScreen(bookId: Long) {
-        router.replaceScreen(BookCreatorScreen(bookId))
+        router.navigateTo(BookCreatorScreen(bookId))
     }
 }
