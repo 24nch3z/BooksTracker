@@ -3,6 +3,7 @@ package ru.s4nchez.bookstracker.presentation.view.list
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import kotlinx.android.synthetic.main.fragment_list.*
 import ru.s4nchez.bookstracker.R
 import ru.s4nchez.bookstracker.presentation.presenter.list.BooksListPresenter
@@ -39,6 +40,7 @@ class BooksListFragment : Fragment(), BooksListView, RecyclerItemClickListener, 
         super.onViewCreated(view, savedInstanceState)
         recycler_view.adapter = bookAdapter
 //        recycler_view.addItemDecoration(FabItemDecoration(context!!)) // Появился баг с обновлением предпоследнего элемента
+        recycler_view.addItemDecoration(DividerItemDecoration(context!!, DividerItemDecoration.VERTICAL))
         create_book_button.setOnClickListener { presenter.openBookCreator() }
         presenter.bindView(this)
         presenter.loadBooks()
@@ -55,12 +57,18 @@ class BooksListFragment : Fragment(), BooksListView, RecyclerItemClickListener, 
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menu_item_cat) {
-            val tag = CatFactDialog::class.java.name
-            if (fragmentManager?.findFragmentByTag(tag) == null) {
-                CatFactDialog().show(fragmentManager, tag)
+        when (item.itemId) {
+            R.id.menu_item_cat -> {
+                val tag = CatFactDialog::class.java.name
+                if (fragmentManager?.findFragmentByTag(tag) == null) {
+                    CatFactDialog().show(fragmentManager, tag)
+                }
+                return true
             }
-            return true
+            R.id.menu_item_logout -> {
+                presenter.logout()
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }

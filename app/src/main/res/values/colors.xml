@@ -8,6 +8,4 @@
 
     <color name="window_background">#fff</color>
     <color name="toolbar_icon">#fff</color>
-    <color name="item_book_background_even">#F7EBEF</color>
-    <color name="item_book_background_odd">#FFFFFFFF</color>
 </resources>

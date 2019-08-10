@@ -1,7 +1,6 @@
 <resources>
-    <string name="app_name">Books Tracker</string>
+    <string name="app_name">Трекер книг</string>
     <string name="common_error">Произошла ошибка</string>
-    <string name="cat">Факт о котах</string>
     <string name="save">Сохранить</string>
     <string name="yes">Да</string>
     <string name="cancel">Отмена</string>
@@ -11,8 +10,12 @@
     <string name="authorization_screen_password_hint">Пароль</string>
     <string name="authorization_screen_button">Войти</string>
     <string name="authorization_screen_login_error">Неправильный логин или пароль</string>
+    <string name="authorization_screen_password_button">Забыли пароль?</string>
+    <string name="authorization_screen_password_text">Забыли пароль? Попробуйте: admin - admin</string>
 
     <string name="books_list_screen_empty_list">Список пуст</string>
+    <string name="books_list_screen_menu_item_cat">Факты о котах</string>
+    <string name="books_list_screen_menu_item_logout">Разлогиниться</string>
 
     <string name="cat_dialog_title">Случайный факт о котах</string>
     <string name="cat_dialog_exit_button">Выйти</string>
